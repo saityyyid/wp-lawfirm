@@ -1,3 +1,7 @@
+// Smooth scroll behavior
+add_action('wp_enqueue_scripts', function() {
+    wp_enqueue_script('smooth-scroll', get_template_directory_uri() . '/assets/js/smooth-scroll.js', array(), '1.0', true);
+});
 <?php
 // === Custom CSS from Customizer ===
 function law_firm_dpattorney_custom_css() {

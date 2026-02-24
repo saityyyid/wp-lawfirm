@@ -6,24 +6,23 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header class="site-header authority-header">
+<header class="site-header">
     <div class="container">
-        <div class="header-row">
-            <div class="logo">
-                <?php if (has_custom_logo()) { the_custom_logo(); } else { ?>
-                    <span class="site-title">DPATTORNEY</span>
-                <?php } ?>
+        <div class="header-inner">
+            <div class="site-branding">
+                <a href="<?php echo home_url(); ?>" class="site-logo">
+                    DPATTORNEY
+                </a>
             </div>
-            <nav class="main-nav">
-                <?php wp_nav_menu(['theme_location' => 'primary', 'menu_class' => 'nav-list']); ?>
+            
+            <nav class="main-navigation">
+                <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
             </nav>
-            <div class="header-cta">
-                <a href="#emergency" class="cta-btn cta-emergency">Konsultasi Darurat</a>
-                <a href="tel:0812XXXXXXX" class="header-phone">0812-XXXX-XXXX</a>
-                    <div class="language-switcher-placeholder">
-                        <?php _e('Language:', 'law-firm-dpattorney'); ?>
-                        <span><?php _e('ID', 'law-firm-dpattorney'); ?> | <?php _e('EN', 'law-firm-dpattorney'); ?></span>
-                    </div>
+            
+            <div class="header-actions">
+                <a href="tel:0812XXXXXXX" class="btn-emergency-header">
+                    Konsultasi Darurat
+                </a>
             </div>
         </div>
     </div>

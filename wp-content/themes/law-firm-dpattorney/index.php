@@ -34,10 +34,7 @@
     }
 
     ?>
-        <!-- About Section -->
-        <section class="about-section container">
-            <h2>About Our Firm</h2>
-            <div class="about-timeline">Timeline/history placeholder</div>
+        <!-- About Section removed for premium UI overhaul -->
             <div class="about-stats">Stats: years, cases, attorneys, etc.</div>
             <div class="about-mission">Mission/vision statement placeholder</div>
         </section>

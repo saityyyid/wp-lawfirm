@@ -1,18 +1,18 @@
 <footer class="site-footer">
     <div class="footer-container">
-        <div class="footer-row">
-            <div class="footer-col brand">
-                <div class="footer-logo">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
                     <?php if (has_custom_logo()) { the_custom_logo(); } else { ?>
                         <span class="site-title">DPATTORNEY</span>
                     <?php } ?>
                 </div>
                 <div class="footer-desc">Litigation Powerhouse. Proven in Court. Trusted by Leaders.</div>
-                <div class="footer-social">
-                    <a href="#" class="social-link">LinkedIn</a>
-                    <a href="#" class="social-link">Instagram</a>
-                </div>
-            </div>
+                    <p class="footer-tagline">Litigation Powerhouse</p>
+                    <p class="footer-description">
+                        Kami adalah firma hukum yang berfokus pada litigasi strategis 
+                        dan pembelaan kasus pidana korporasi di Indonesia.
+                    </p>
             <div class="footer-col practice-areas">
                 <h4>Practice Areas</h4>
                 <ul>
@@ -42,6 +42,7 @@
                 <div>Mon-Fri: 09.00-18.00</div>
             </div>
         </div>
+    </footer>
         <div class="footer-bottom">
             <div class="copyright">&copy; <?php echo date('Y'); ?> Dion Pongkor & Partners. All rights reserved.</div>
             <div class="footer-links">
