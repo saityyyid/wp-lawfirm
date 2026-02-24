@@ -8,25 +8,34 @@ Version: 1.0.0
 License: GPL-2.0+
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: law-firm-dpattorney
-Tags: law firm, attorney, customizable, Gutenberg, responsive, accessibility
-*/
-
-/* === Design Philosophy & Visual Identity === */
-:root {
-	--primary-dark: #0A0A0A;
-	--secondary-dark: #1C1C1E;
-	--accent-gold: #C9A962;
-	--text-light: #FFFFFF;
-	--text-muted: #A1A1A6;
+Theme Name: DPATTORNEY - Litigation Powerhouse
+Theme URI: https://umbra.law
+Author: DPATTORNEY Legal Team
+Author URI: https://ahp.id
+Description: Premium litigation theme for high-stakes criminal defense and corporate fraud cases. Built for Dion Pongkor & Partners with case-centric design.
+Version: 1.0.0
+License: GPL-2.0+
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: law-firm-dpattorney
+Tags: litigation, criminal-defense, law-firm, attorney, customizable, case-studies, bilingual, indonesia
 	--font-heading: 'Inter', 'Playfair Display', serif;
 	--font-body: 'Inter', 'Source Sans Pro', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
 	--base-font-size: 18px;
 	--h1-size: 2.5rem;
-	--h2-size: 2rem;
-	--h3-size: 1.5rem;
-	--h4-size: 1.25rem;
-	--h5-size: 1rem;
-	--h6-size: 0.875rem;
+	--primary-dark: #0F1419;
+	--secondary-dark: #1A1F2E;
+	--accent-gold: #C5A572;
+	--accent-red: #8B2635;
+	--text-light: #F5F5F0;
+	--text-muted: #8B92A8;
+	--status-won: #2D5A3D;
+	--font-heading: 'Playfair Display', Georgia, serif;
+	--font-body: 'Inter', -apple-system, sans-serif;
+	--base-font-size: 18px;
+	--h1-size: 3.5rem;
+	--h2-size: 2.5rem;
+	--h3-size: 1.75rem;
 	--line-height: 1.6;
 	--letter-spacing: 0.01em;
 	--font-weight-heading: 700;
@@ -36,27 +45,37 @@ Tags: law firm, attorney, customizable, Gutenberg, responsive, accessibility
 	--grid-gap: 2rem;
 }
 
+
 body {
 	font-family: var(--font-body);
 	font-size: var(--base-font-size);
-	color: var(--text-light);
-	background: var(--primary-dark);
+	color: var(--primary-dark);
+	background: var(--text-light);
 	line-height: var(--line-height);
 	letter-spacing: var(--letter-spacing);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1 {
 	font-family: var(--font-heading);
+	font-size: var(--h1-size);
 	font-weight: var(--font-weight-heading);
-	color: var(--text-light);
+	color: var(--primary-dark);
 	margin-bottom: 1rem;
 }
-h1 { font-size: var(--h1-size); }
-h2 { font-size: var(--h2-size); }
-h3 { font-size: var(--h3-size); }
-h4 { font-size: var(--h4-size); }
-h5 { font-size: var(--h5-size); }
-h6 { font-size: var(--h6-size); }
+h2 {
+	font-family: var(--font-heading);
+	font-size: var(--h2-size);
+	font-weight: var(--font-weight-heading);
+	color: var(--primary-dark);
+	margin-bottom: 1rem;
+}
+h3 {
+	font-family: var(--font-heading);
+	font-size: var(--h3-size);
+	font-weight: var(--font-weight-heading);
+	color: var(--primary-dark);
+	margin-bottom: 1rem;
+}
 
 .text-muted {
 	color: var(--text-muted);
@@ -75,6 +94,45 @@ h6 { font-size: var(--h6-size); }
 .grid {
 	display: grid;
 	gap: var(--grid-gap);
+}
+
+/* Utility Classes */
+.case-status-ongoing {
+	border: 2px solid var(--accent-gold);
+	background: var(--accent-gold);
+	color: var(--primary-dark);
+	padding: 0.25em 0.75em;
+	border-radius: 4px;
+	font-weight: 600;
+}
+.case-status-won {
+	border: 2px solid var(--status-won);
+	background: var(--status-won);
+	color: #fff;
+	padding: 0.25em 0.75em;
+	border-radius: 4px;
+	font-weight: 600;
+}
+.case-status-appeal {
+	border: 2px solid var(--accent-red);
+	background: var(--accent-red);
+	color: #fff;
+	padding: 0.25em 0.75em;
+	border-radius: 4px;
+	font-weight: 600;
+}
+.emergency-cta {
+	background: var(--accent-red);
+	color: #fff;
+	font-weight: 700;
+	padding: 1em 2em;
+	border-radius: 6px;
+	text-align: center;
+}
+.uppercase-tracked {
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-weight: 600;
 }
 
 /* Subtle animations and micro-interactions */

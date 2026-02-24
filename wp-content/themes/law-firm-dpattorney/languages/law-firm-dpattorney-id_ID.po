@@ -1,0 +1,6 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: law-firm-dpattorney\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Language: id_ID\n"
+"X-Generator: GitHub Copilot\n"

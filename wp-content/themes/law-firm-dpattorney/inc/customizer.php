@@ -1,3 +1,28 @@
+// Emergency Bar Customizer Settings
+add_action('customize_register', function($wp_customize) {
+    $wp_customize->add_section('emergency_bar_section', array(
+        'title' => __('Emergency Bar', 'law-firm-dpattorney'),
+        'priority' => 30,
+    ));
+    $wp_customize->add_setting('emergency_bar_enabled', array(
+        'default' => true,
+        'sanitize_callback' => 'wp_validate_boolean',
+    ));
+    $wp_customize->add_control('emergency_bar_enabled', array(
+        'label' => __('Enable Emergency Bar', 'law-firm-dpattorney'),
+        'section' => 'emergency_bar_section',
+        'type' => 'checkbox',
+    ));
+    $wp_customize->add_setting('emergency_phone', array(
+        'default' => '+62 812-3456-7890',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    $wp_customize->add_control('emergency_phone', array(
+        'label' => __('Emergency Phone Number', 'law-firm-dpattorney'),
+        'section' => 'emergency_bar_section',
+        'type' => 'text',
+    ));
+});
 <?php
 // Theme Customizer: Colors, Typography, Layout, Header/Footer
 

@@ -20,7 +20,10 @@
             <div class="header-cta">
                 <a href="#emergency" class="cta-btn cta-emergency">Konsultasi Darurat</a>
                 <a href="tel:0812XXXXXXX" class="header-phone">0812-XXXX-XXXX</a>
-                <div class="lang-switcher">ID | EN</div>
+                    <div class="language-switcher-placeholder">
+                        <?php _e('Language:', 'law-firm-dpattorney'); ?>
+                        <span><?php _e('ID', 'law-firm-dpattorney'); ?> | <?php _e('EN', 'law-firm-dpattorney'); ?></span>
+                    </div>
             </div>
         </div>
     </div>
