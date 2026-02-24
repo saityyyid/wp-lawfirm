@@ -1,3 +1,95 @@
+// === Custom CSS from Customizer ===
+function law_firm_dpattorney_custom_css() {
+    $custom_css = get_theme_mod('law_firm_custom_css', '');
+    if (!empty($custom_css)) {
+        echo '<style id="law-firm-dpattorney-custom-css">' . $custom_css . '</style>';
+    }
+}
+add_action('wp_head', 'law_firm_dpattorney_custom_css', 20);
+// === Customizer Live Preview Support ===
+function law_firm_dpattorney_customize_register($wp_customize) {
+    // Site title selective refresh
+    if (isset($wp_customize->selective_refresh)) {
+        $wp_customize->selective_refresh->add_partial('blogname', array(
+            'selector' => '.site-title',
+            'render_callback' => function() { return get_bloginfo('name'); },
+        ));
+    }
+    // Colors and fonts postMessage transport
+    $wp_customize->get_setting('law_firm_primary_color')->transport = 'postMessage';
+    $wp_customize->get_setting('law_firm_secondary_color')->transport = 'postMessage';
+    $wp_customize->get_setting('law_firm_accent_color')->transport = 'postMessage';
+    $wp_customize->get_setting('law_firm_text_color')->transport = 'postMessage';
+    $wp_customize->get_setting('law_firm_font_heading')->transport = 'postMessage';
+    $wp_customize->get_setting('law_firm_font_body')->transport = 'postMessage';
+    $wp_customize->get_setting('law_firm_container_max_width')->transport = 'postMessage';
+}
+add_action('customize_register', 'law_firm_dpattorney_customize_register');
+
+function law_firm_dpattorney_customize_preview_js() {
+    wp_enqueue_script('law-firm-dpattorney-customizer', get_template_directory_uri() . '/assets/js/customizer.js', array('customize-preview'), '1.0.0', true);
+}
+add_action('customize_preview_init', 'law_firm_dpattorney_customize_preview_js');
+// === Critical CSS Output ===
+function law_firm_dpattorney_critical_css() {
+    echo '<style id="law-firm-dpattorney-critical-css">';
+    echo '*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }';
+    echo 'body { background: var(--primary-dark); color: var(--text-light); font-family: var(--font-body); font-size: 18px; line-height: 1.6; letter-spacing: 0.01em; }';
+    echo 'h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--text-light); margin-bottom: 1rem; }';
+    echo 'h1 { font-size: 3.5rem; } h2 { font-size: 2.5rem; } h3 { font-size: 1.75rem; }';
+    echo '.container { max-width: var(--container-max-width); margin: 0 auto; padding: 2rem; }';
+    echo '.text-muted { color: var(--text-muted); }';
+    echo '.accent { color: var(--accent-gold); }';
+    echo '.uppercase-tracked { text-transform: uppercase; letter-spacing: 0.1em; }';
+    echo '.case-status-ongoing { border: 2px solid var(--accent-gold); background: var(--accent-gold); color: var(--primary-dark); padding: 0.25em 0.75em; border-radius: 4px; font-weight: 600; }';
+    echo '.case-status-won { border: 2px solid var(--status-won); background: var(--status-won); color: #fff; padding: 0.25em 0.75em; border-radius: 4px; font-weight: 600; }';
+    echo '.case-status-appeal { border: 2px solid var(--accent-red); background: var(--accent-red); color: #fff; padding: 0.25em 0.75em; border-radius: 4px; font-weight: 600; }';
+    echo '.emergency-cta { background: var(--accent-red); color: #fff; padding: 1rem 2rem; border-radius: 6px; font-weight: bold; text-align: center; margin: 2rem 0; }';
+    echo '</style>';
+}
+add_action('wp_head', 'law_firm_dpattorney_critical_css', 2);
+// === Dynamic CSS Variables Output ===
+function law_firm_dpattorney_dynamic_css() {
+    // Get Customizer settings or fallback defaults
+    $primary = get_theme_mod('law_firm_primary_color', '#0F1419');
+    $secondary = get_theme_mod('law_firm_secondary_color', '#1A1F2E');
+    $accent = get_theme_mod('law_firm_accent_color', '#C5A572');
+    $text_light = get_theme_mod('law_firm_text_color', '#F5F5F0');
+    $font_heading = get_theme_mod('law_firm_font_heading', 'Playfair Display');
+    $font_body = get_theme_mod('law_firm_font_body', 'Inter');
+    $container_max = get_theme_mod('law_firm_container_max_width', '1200px');
+    echo '<style id="law-firm-dpattorney-dynamic-css">:root {';
+    echo "--primary-dark: {$primary};";
+    echo "--secondary-dark: {$secondary};";
+    echo "--accent-gold: {$accent};";
+    echo "--accent-red: #8B2635;";
+    echo "--text-light: {$text_light};";
+    echo "--text-muted: #8B92A8;";
+    echo "--font-heading: '{$font_heading}', serif;";
+    echo "--font-body: '{$font_body}', sans-serif;";
+    echo "--container-max-width: {$container_max};";
+    echo '}';
+    echo '</style>';
+}
+add_action('wp_head', 'law_firm_dpattorney_dynamic_css', 3);
+// === Enqueue Styles with Correct Order ===
+function law_firm_dpattorney_enqueue_styles() {
+    // 1. Google Fonts (priority 1)
+    wp_enqueue_style(
+        'law-firm-google-fonts',
+        'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap',
+        array(),
+        null
+    );
+    // 4. Main style.css (priority 10)
+    wp_enqueue_style(
+        'law-firm-dpattorney-style',
+        get_stylesheet_uri(),
+        array('law-firm-google-fonts'),
+        wp_get_theme()->get('Version')
+    );
+}
+add_action('wp_enqueue_scripts', 'law_firm_dpattorney_enqueue_styles', 10);
 <?php
 
 // === Theme Setup ===
