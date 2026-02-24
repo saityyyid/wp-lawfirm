@@ -20,22 +20,19 @@ Text Domain: law-firm-dpattorney
 Tags: litigation, criminal-defense, law-firm, attorney, customizable, case-studies, bilingual, indonesia
 	--font-heading: 'Inter', 'Playfair Display', serif;
 	--font-body: 'Inter', 'Source Sans Pro', sans-serif;
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-	--base-font-size: 18px;
-	--h1-size: 2.5rem;
-	--primary-dark: #0F1419;
-	--secondary-dark: #1A1F2E;
-	--accent-gold: #C5A572;
-	--accent-red: #8B2635;
-	--text-light: #F5F5F0;
-	--text-muted: #8B92A8;
-	--status-won: #2D5A3D;
-	--font-heading: 'Playfair Display', Georgia, serif;
-	--font-body: 'Inter', -apple-system, sans-serif;
 	--base-font-size: 18px;
 	--h1-size: 3.5rem;
 	--h2-size: 2.5rem;
 	--h3-size: 1.75rem;
+	--primary-dark: #0F1419;
+	--secondary-dark: #1A1F2E;
+	--accent-gold: #C5A572;
+	--accent-red: #8B2635;
+	--text-light: #0F1419;
+	--text-muted: #8B92A8;
+	--status-won: #2D5A3D;
+	--font-heading: 'Playfair Display', Georgia, serif;
+	--font-body: 'Inter', 'Source Sans Pro', sans-serif;
 	--line-height: 1.6;
 	--letter-spacing: 0.01em;
 	--font-weight-heading: 700;
@@ -49,10 +46,19 @@ Tags: litigation, criminal-defense, law-firm, attorney, customizable, case-studi
 body {
 	font-family: var(--font-body);
 	font-size: var(--base-font-size);
-	color: var(--primary-dark);
-	background: var(--text-light);
+	color: var(--text-light);
+	background: var(--primary-dark);
 	line-height: var(--line-height);
 	letter-spacing: var(--letter-spacing);
+}
+
+a, a:visited {
+	color: var(--accent-gold);
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: var(--accent-red);
+	text-decoration: underline;
 }
 
 h1 {

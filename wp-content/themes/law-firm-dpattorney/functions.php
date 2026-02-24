@@ -18,7 +18,21 @@ add_action('after_setup_theme', 'law_firm_dpattorney_setup');
 
 // === Enqueue Scripts & Styles ===
 function law_firm_dpattorney_enqueue_scripts() {
-    wp_enqueue_style('law-firm-dpattorney-style', get_stylesheet_uri());
+    // Enqueue Google Fonts first
+    wp_enqueue_style(
+        'law-firm-google-fonts',
+        'https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap',
+        array(),
+        null
+    );
+    // Enqueue main stylesheet with theme version, dependent on Google Fonts
+    wp_enqueue_style(
+        'law-firm-dpattorney-style',
+        get_stylesheet_uri(),
+        array('law-firm-google-fonts'),
+        wp_get_theme()->get('Version')
+    );
+    // Enqueue main JS
     wp_enqueue_script('law-firm-dpattorney-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'law_firm_dpattorney_enqueue_scripts');
