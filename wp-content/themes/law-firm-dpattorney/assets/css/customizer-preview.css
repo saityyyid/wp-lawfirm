@@ -1,0 +1,4 @@
+/* Customizer live preview styles for law-firm-dpattorney */
+body.customizer-preview {
+  transition: all 0.3s ease;
+}

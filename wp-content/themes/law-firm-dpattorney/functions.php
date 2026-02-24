@@ -71,6 +71,25 @@ add_filter('the_content', function($content) {
     return preg_replace('/<img(?!.*alt=)/', '<img alt="Image description"', $content);
 });
 
+// Accessibility: focus-visible outline
+add_action('wp_head', function() {
+  echo '<style>:focus-visible { outline: 2px solid #C5A572 !important; outline-offset: 2px; }</style>';
+});
+
+// Accessibility: add ARIA landmarks
+add_filter('body_class', function($classes) {
+  $classes[] = 'wp-lawfirm-accessible';
+  return $classes;
+});
+
+// Security: add nonce to AJAX scripts
+add_action('wp_enqueue_scripts', function() {
+  wp_localize_script('law-firm-dpattorney-main', 'lawFirmAjax', array(
+    'ajax_url' => admin_url('admin-ajax.php'),
+    'nonce' => wp_create_nonce('law_firm_dpattorney_filter_cases'),
+  ));
+});
+
 // Security: Sanitize inputs/outputs, nonce verification for forms
 function law_firm_dpattorney_sanitize($data) {
     return esc_html($data);

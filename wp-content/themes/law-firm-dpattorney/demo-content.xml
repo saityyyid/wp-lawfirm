@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0"
+  xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/"
+  xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:wp="http://wordpress.org/export/1.2/"
+>
+<channel>
+  <title>law-firm-dpattorney Demo Content</title>
+  <wp:wxr_version>1.2</wp:wxr_version>
+  <wp:base_site_url>https://example.com/</wp:base_site_url>
+  <wp:base_blog_url>https://example.com/</wp:base_blog_url>
+
+  <!-- Pages -->
+  <item>
+    <title>Beranda</title>
+    <wp:post_type>page</wp:post_type>
+    <wp:post_name>beranda</wp:post_name>
+    <wp:page_template>page-home.php</wp:page_template>
+    <content:encoded><![CDATA[Welcome to the Law Firm Homepage.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Tentang Kami</title>
+    <wp:post_type>page</wp:post_type>
+    <wp:post_name>tentang-kami</wp:post_name>
+    <wp:page_template>page-about.php</wp:page_template>
+    <content:encoded><![CDATA[About the law firm.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Kasus Terkemuka</title>
+    <wp:post_type>page</wp:post_type>
+    <wp:post_name>kasus-terkemuka</wp:post_name>
+    <wp:page_template></wp:page_template>
+    <content:encoded><![CDATA[Notable cases archive.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Area Praktik</title>
+    <wp:post_type>page</wp:post_type>
+    <wp:post_name>area-praktik</wp:post_name>
+    <wp:page_template></wp:page_template>
+    <content:encoded><![CDATA[Practice areas archive.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Partner</title>
+    <wp:post_type>page</wp:post_type>
+    <wp:post_name>partner</wp:post_name>
+    <wp:page_template></wp:page_template>
+    <content:encoded><![CDATA[Team archive.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Kontak</title>
+    <wp:post_type>page</wp:post_type>
+    <wp:post_name>kontak</wp:post_name>
+    <wp:page_template>page-contact.php</wp:page_template>
+    <content:encoded><![CDATA[Contact us.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Blog</title>
+    <wp:post_type>page</wp:post_type>
+    <wp:post_name>blog</wp:post_name>
+    <wp:page_template></wp:page_template>
+    <content:encoded><![CDATA[Legal insights and news.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+
+  <!-- Sample Case Studies -->
+  <item>
+    <title>Pembelaan Strategis Kasus Korupsi BTS 4G</title>
+    <wp:post_type>case_studies</wp:post_type>
+    <wp:post_name>korupsi-bts-4g</wp:post_name>
+    <content:encoded><![CDATA[Ringkasan kasus korupsi BTS 4G.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <wp:postmeta>
+      <wp:meta_key>case_client</wp:meta_key>
+      <wp:meta_value><![CDATA[Johnny G. Plate]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_status</wp:meta_key>
+      <wp:meta_value><![CDATA[Won]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_year</wp:meta_key>
+      <wp:meta_value><![CDATA[2023]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title>Justice Collaborator dalam Kasus Suap Djoko Tjandra</title>
+    <wp:post_type>case_studies</wp:post_type>
+    <wp:post_name>suap-djoko-tjandra</wp:post_name>
+    <content:encoded><![CDATA[Ringkasan kasus suap Djoko Tjandra.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <wp:postmeta>
+      <wp:meta_key>case_client</wp:meta_key>
+      <wp:meta_value><![CDATA[Tommy Sumardi]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_status</wp:meta_key>
+      <wp:meta_value><![CDATA[Won]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_year</wp:meta_key>
+      <wp:meta_value><![CDATA[2020]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title>Kasasi Pembunuhan Engeline</title>
+    <wp:post_type>case_studies</wp:post_type>
+    <wp:post_name>kasasi-engeline</wp:post_name>
+    <content:encoded><![CDATA[Ringkasan kasus pembunuhan Engeline.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <wp:postmeta>
+      <wp:meta_key>case_client</wp:meta_key>
+      <wp:meta_value><![CDATA[Margriet Megawe]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_status</wp:meta_key>
+      <wp:meta_value><![CDATA[Won]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_year</wp:meta_key>
+      <wp:meta_value><![CDATA[2016]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title>Pencemaran Nama Baik Hakim Sarpin Rizaldi</title>
+    <wp:post_type>case_studies</wp:post_type>
+    <wp:post_name>pencemaran-sarpin</wp:post_name>
+    <content:encoded><![CDATA[Ringkasan kasus pencemaran nama baik.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <wp:postmeta>
+      <wp:meta_key>case_client</wp:meta_key>
+      <wp:meta_value><![CDATA[Sarpin Rizaldi]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_status</wp:meta_key>
+      <wp:meta_value><![CDATA[Won]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_year</wp:meta_key>
+      <wp:meta_value><![CDATA[2015]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title>Pra-peradilan Paspor Palsu Gayus Tambunan</title>
+    <wp:post_type>case_studies</wp:post_type>
+    <wp:post_name>pra-peradilan-gayus</wp:post_name>
+    <content:encoded><![CDATA[Ringkasan kasus paspor palsu.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <wp:postmeta>
+      <wp:meta_key>case_client</wp:meta_key>
+      <wp:meta_value><![CDATA[Gayus Tambunan]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_status</wp:meta_key>
+      <wp:meta_value><![CDATA[Ongoing]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>case_year</wp:meta_key>
+      <wp:meta_value><![CDATA[2018]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+
+  <!-- Team Members -->
+  <item>
+    <title>Dion Pongkor</title>
+    <wp:post_type>team_members</wp:post_type>
+    <wp:post_name>dion-pongkor</wp:post_name>
+    <content:encoded><![CDATA[Managing Partner. Alumni UGM.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <wp:postmeta>
+      <wp:meta_key>team_position</wp:meta_key>
+      <wp:meta_value><![CDATA[Managing Partner]]></wp:meta_value>
+    </wp:postmeta>
+    <wp:postmeta>
+      <wp:meta_key>team_education</wp:meta_key>
+      <wp:meta_value><![CDATA[UGM]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title>Partner 2</title>
+    <wp:post_type>team_members</wp:post_type>
+    <wp:post_name>partner-2</wp:post_name>
+    <content:encoded><![CDATA[Partner.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <wp:postmeta>
+      <wp:meta_key>team_position</wp:meta_key>
+      <wp:meta_value><![CDATA[Partner]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+  <item>
+    <title>Associate 1</title>
+    <wp:post_type>team_members</wp:post_type>
+    <wp:post_name>associate-1</wp:post_name>
+    <content:encoded><![CDATA[Senior Associate.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <wp:postmeta>
+      <wp:meta_key>team_position</wp:meta_key>
+      <wp:meta_value><![CDATA[Senior Associate]]></wp:meta_value>
+    </wp:postmeta>
+  </item>
+
+  <!-- Practice Areas -->
+  <item>
+    <title>Hukum Pidana Korporasi</title>
+    <wp:post_type>practice_areas</wp:post_type>
+    <wp:post_name>hukum-pidana-korporasi</wp:post_name>
+    <content:encoded><![CDATA[Deskripsi singkat area praktik.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Litigation & Banding</title>
+    <wp:post_type>practice_areas</wp:post_type>
+    <wp:post_name>litigation-banding</wp:post_name>
+    <content:encoded><![CDATA[Deskripsi singkat area praktik.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Pra-peradilan</title>
+    <wp:post_type>practice_areas</wp:post_type>
+    <wp:post_name>pra-peradilan</wp:post_name>
+    <content:encoded><![CDATA[Deskripsi singkat area praktik.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Hukum Administrasi & Regulasi</title>
+    <wp:post_type>practice_areas</wp:post_type>
+    <wp:post_name>hukum-administrasi-regulasi</wp:post_name>
+    <content:encoded><![CDATA[Deskripsi singkat area praktik.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Perlindungan Eksekutif</title>
+    <wp:post_type>practice_areas</wp:post_type>
+    <wp:post_name>perlindungan-eksekutif</wp:post_name>
+    <content:encoded><![CDATA[Deskripsi singkat area praktik.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+  <item>
+    <title>Hukum Keluarga & Anak</title>
+    <wp:post_type>practice_areas</wp:post_type>
+    <wp:post_name>hukum-keluarga-anak</wp:post_name>
+    <content:encoded><![CDATA[Deskripsi singkat area praktik.]]></content:encoded>
+    <wp:status>publish</wp:status>
+  </item>
+
+  <!-- Blog Posts -->
+  <item>
+    <title>Analisis Kasus: Korupsi BTS 4G</title>
+    <wp:post_type>post</wp:post_type>
+    <wp:post_name>analisis-kasus-bts</wp:post_name>
+    <content:encoded><![CDATA[Analisis hukum kasus BTS 4G.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <category domain="category" nicename="analisis-kasus"><![CDATA[Analisis Kasus]]></category>
+  </item>
+  <item>
+    <title>Update Regulasi: UU ITE</title>
+    <wp:post_type>post</wp:post_type>
+    <wp:post_name>update-regulasi-uu-ite</wp:post_name>
+    <content:encoded><![CDATA[Update terbaru UU ITE.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <category domain="category" nicename="update-regulasi"><![CDATA[Update Regulasi]]></category>
+  </item>
+  <item>
+    <title>Strategi Hukum: Pra-peradilan</title>
+    <wp:post_type>post</wp:post_type>
+    <wp:post_name>strategi-hukum-pra-peradilan</wp:post_name>
+    <content:encoded><![CDATA[Strategi hukum dalam pra-peradilan.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <category domain="category" nicename="strategi-hukum"><![CDATA[Strategi Hukum]]></category>
+  </item>
+  <item>
+    <title>Analisis Kasus: Suap Djoko Tjandra</title>
+    <wp:post_type>post</wp:post_type>
+    <wp:post_name>analisis-kasus-djoko</wp:post_name>
+    <content:encoded><![CDATA[Analisis kasus suap Djoko Tjandra.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <category domain="category" nicename="analisis-kasus"><![CDATA[Analisis Kasus]]></category>
+  </item>
+  <item>
+    <title>Update Regulasi: KUHP Baru</title>
+    <wp:post_type>post</wp:post_type>
+    <wp:post_name>update-regulasi-kuhp</wp:post_name>
+    <content:encoded><![CDATA[Update KUHP terbaru.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <category domain="category" nicename="update-regulasi"><![CDATA[Update Regulasi]]></category>
+  </item>
+  <item>
+    <title>Strategi Hukum: Banding</title>
+    <wp:post_type>post</wp:post_type>
+    <wp:post_name>strategi-hukum-banding</wp:post_name>
+    <content:encoded><![CDATA[Strategi hukum dalam banding.]]></content:encoded>
+    <wp:status>publish</wp:status>
+    <category domain="category" nicename="strategi-hukum"><![CDATA[Strategi Hukum]]></category>
+  </item>
+
+  <!-- Menus, Widgets, etc. can be added via WP admin after import -->
+</channel>
+</rss>

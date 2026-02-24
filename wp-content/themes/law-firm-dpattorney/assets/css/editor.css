@@ -1,0 +1,15 @@
+/* Gutenberg editor styles for law-firm-dpattorney */
+:root {
+  --color-primary-dark: #0F1419;
+  --color-accent-gold: #C5A572;
+}
+.editor-styles-wrapper {
+  font-family: 'Inter', sans-serif;
+  background: #fff;
+  color: var(--color-primary-dark);
+}
+.block-editor-block-list__block h1,
+.block-editor-block-list__block h2,
+.block-editor-block-list__block h3 {
+  font-family: 'Playfair Display', serif;
+}

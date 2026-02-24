@@ -1,0 +1,204 @@
+/* 1. CSS Variables & Reset */
+:root {
+  --color-primary-dark: #0F1419;
+  --color-secondary-dark: #1A1F2E;
+  --color-accent-gold: #C5A572;
+  --color-accent-red: #8B2635;
+  --color-text-light: #F5F5F0;
+  --color-text-muted: #8B92A8;
+  --color-border: rgba(197, 165, 114, 0.2);
+  --container-max: 1280px;
+  --section-padding-desktop: 120px;
+  --section-padding-tablet: 80px;
+  --section-padding-mobile: 60px;
+  --grid-gap: 32px;
+  --border-radius: 0px;
+}
+
+html { box-sizing: border-box; }
+*, *:before, *:after { box-sizing: inherit; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-primary-dark);
+  background: #fff;
+  margin: 0;
+}
+
+/* 2. Typography & Base */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', Georgia, serif;
+  line-height: 1.2;
+  margin-top: 0;
+}
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+p, ul, ol { color: var(--color-primary-dark); }
+a { color: var(--color-accent-gold); text-decoration: none; transition: color 0.3s; }
+a:hover, a:focus { color: var(--color-accent-red); }
+
+/* 3. Layout (container, grid, flex utilities) */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+.section {
+  padding: var(--section-padding-mobile) 0;
+}
+@media (min-width: 768px) {
+  .section { padding: var(--section-padding-tablet) 0; }
+}
+@media (min-width: 1024px) {
+  .section { padding: var(--section-padding-desktop) 0; }
+}
+.grid {
+  display: grid;
+  gap: var(--grid-gap);
+}
+
+/* 4. Components (buttons, cards, forms, badges) */
+.btn {
+  display: inline-block;
+  padding: 0.75em 2em;
+  border-radius: var(--border-radius);
+  background: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+  font-weight: 600;
+  border: none;
+  transition: background 0.3s, color 0.3s;
+  cursor: pointer;
+}
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--color-accent-gold);
+  color: var(--color-accent-gold);
+}
+.btn:hover, .btn:focus { background: var(--color-accent-red); color: #fff; }
+.badge {
+  display: inline-block;
+  padding: 0.25em 0.75em;
+  border-radius: var(--border-radius);
+  background: var(--color-accent-gold);
+  color: var(--color-primary-dark);
+  font-size: 0.85em;
+  font-weight: 600;
+}
+.card {
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+.card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+
+/* 5. Header & Navigation */
+.site-header {
+  background: var(--color-primary-dark);
+  color: var(--color-text-light);
+  padding: 1rem 0;
+  position: relative;
+  z-index: 100;
+}
+.site-header.is-sticky {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.main-navigation {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+.main-navigation.open { right: 0; }
+.nav-toggle { display: none; }
+@media (max-width: 1024px) {
+  .main-navigation { display: none; }
+  .main-navigation.open { display: flex; flex-direction: column; }
+  .nav-toggle { display: block; }
+}
+
+/* 6. Footer */
+.site-footer {
+  background: var(--color-secondary-dark);
+  color: var(--color-text-light);
+  padding: 2rem 0;
+}
+
+/* 7. Sections (hero, stats, cases, team, etc.) */
+.hero-case, .hero-authority, .hero-practice {
+  background: var(--color-primary-dark);
+  color: var(--color-text-light);
+  padding: 4rem 0 3rem 0;
+  text-align: center;
+  position: relative;
+}
+.section-stats {
+  background: #fff;
+  color: var(--color-primary-dark);
+}
+.section-cases {
+  background: var(--color-secondary-dark);
+  color: var(--color-text-light);
+}
+.section-practices {
+  background: #fff;
+}
+.section-team {
+  background: #fff;
+}
+.section-testimonials {
+  background: var(--color-primary-dark);
+  color: var(--color-accent-gold);
+}
+.section-insights {
+  background: #fff;
+}
+.section-cta {
+  background: var(--color-primary-dark);
+  color: var(--color-accent-gold);
+  text-align: center;
+}
+
+/* 8. Single Templates */
+.single-case-study, .single-team-member, .single-practice-area {
+  background: #fff;
+  color: var(--color-primary-dark);
+}
+
+/* 9. Archive Templates */
+.archive-case-studies, .archive-team-members, .archive-practice-areas {
+  background: #fff;
+}
+
+/* 10. Blocks */
+.wp-block { margin-bottom: 2rem; }
+
+/* 11. Utilities (spacing, text, display) */
+.text-center { text-align: center; }
+.text-muted { color: var(--color-text-muted); }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* 12. Responsive (mobile-first, breakpoints: 768px, 1024px, 1280px) */
+@media (min-width: 768px) {
+  body { font-size: 18px; }
+}
+@media (min-width: 1280px) {
+  .container { padding: 0; }
+}
+
+/* 13. Print styles */
+@media print {
+  .site-header, .site-footer, nav, .btn, .nav-toggle { display: none !important; }
+  body { color: #000; background: #fff; }
+}
+
+/* 14. Dark mode overrides (if applicable) */
+@media (prefers-color-scheme: dark) {
+  body { background: #181A1B; color: #F5F5F0; }
+}

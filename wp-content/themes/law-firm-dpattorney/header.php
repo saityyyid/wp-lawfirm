@@ -6,68 +6,35 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<header id="site-header">
-    <?php
-    // Contact Info Bar
-    $contact_bar = get_theme_mod('law_firm_header_contact_bar');
-    if ($contact_bar) {
-        echo '<div class="header-contact-bar">' . esc_html($contact_bar) . '</div>';
-    }
-
-    // Header classes
-    $header_classes = '';
-    if (get_theme_mod('law_firm_header_sticky')) $header_classes .= ' sticky-header';
-    if (get_theme_mod('law_firm_header_transparent')) $header_classes .= ' transparent-header';
-
-    // Header style
-    $header_style = 'height:' . esc_attr(get_theme_mod('law_firm_header_height', '80px')) . ';';
-    $header_style .= 'background:' . esc_attr(get_theme_mod('law_firm_header_bg_color', '#0A0A0A')) . ';';
-    $header_style .= 'opacity:' . esc_attr(get_theme_mod('law_firm_header_opacity', '1')) . ';';
-    if (get_theme_mod('law_firm_header_border_bottom')) $header_style .= 'border-bottom:1px solid #A1A1A6;';
-
-    ?>
-    <div class="site-header-inner<?php echo $header_classes; ?>" style="<?php echo $header_style; ?>">
-        <div class="header-logo">
-            <?php
-            // Logo variants
-            $logo_dark = get_theme_mod('law_firm_logo_dark');
-            $logo_light = get_theme_mod('law_firm_logo_light');
-            if ($logo_dark || $logo_light) {
-                $logo = get_theme_mod('law_firm_header_transparent') ? $logo_light : $logo_dark;
-                if ($logo) {
-                    echo '<img src="' . esc_url($logo) . '" alt="Logo">';
-                }
-            } elseif (has_custom_logo()) {
-                the_custom_logo();
-            } else {
-                echo '<h1>' . get_bloginfo('name') . '</h1>';
-            }
-            ?>
-        </div>
-        <nav id="site-navigation">
-            <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-        </nav>
-        <div class="header-cta">
-            <a href="<?php echo esc_url(get_theme_mod('law_firm_header_cta_url', '#')); ?>" class="cta-btn accent">
-                <?php echo esc_html(get_theme_mod('law_firm_header_cta_text', __('Free Consultation', 'law-firm-dpattorney'))); ?>
-            </a>
-        </div>
-        <?php if (get_theme_mod('law_firm_header_search_icon')) { ?>
-            <div class="header-search-icon">
-                <span>&#128269;</span>
+<header class="site-header authority-header">
+    <div class="container">
+        <div class="header-row">
+            <div class="logo">
+                <?php if (has_custom_logo()) { the_custom_logo(); } else { ?>
+                    <span class="site-title">DPATTORNEY</span>
+                <?php } ?>
             </div>
-        <?php } ?>
-        <?php
-        $social_icons = get_theme_mod('law_firm_header_social_icons');
-        if ($social_icons) {
-            echo '<div class="header-social-icons">';
-            $icons = explode(',', $social_icons);
-            foreach ($icons as $icon) {
-                $icon = trim($icon);
-                if ($icon) echo '<span class="social-icon">' . esc_html($icon) . '</span>';
-            }
-            echo '</div>';
-        }
-        ?>
+            <nav class="main-nav">
+                <?php wp_nav_menu(['theme_location' => 'primary', 'menu_class' => 'nav-list']); ?>
+            </nav>
+            <div class="header-cta">
+                <a href="#emergency" class="cta-btn cta-emergency">Konsultasi Darurat</a>
+                <a href="tel:0812XXXXXXX" class="header-phone">0812-XXXX-XXXX</a>
+                <div class="lang-switcher">ID | EN</div>
+            </div>
+        </div>
     </div>
 </header>
+<div class="hero-section hero-case-victory">
+    <div class="hero-bg-texture"></div>
+    <div class="hero-content">
+        <span class="hero-preheading">Kemenangan Terbaru</span>
+        <h1 class="hero-headline">Bebas dari Tuduhan Korupsi BTS 4G</h1>
+        <div class="hero-subheadline">Representasi strategis untuk Johnny G. Plate di Pengadilan Tipikor</div>
+        <div class="hero-meta">2023 | Pengadilan Tipikor Jakarta | Status: Bebas</div>
+        <div class="hero-ctas">
+            <a href="#case-detail" class="cta-btn cta-primary">Lihat Detail Kasus</a>
+            <a href="#consult" class="cta-btn cta-secondary">Konsultasi Sekarang</a>
+        </div>
+    </div>
+</div>
