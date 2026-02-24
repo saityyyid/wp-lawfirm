@@ -1,83 +1,6 @@
-// Performance & SEO Enhancements
-// Lazy loading for all images
-add_filter('wp_get_attachment_image_attributes', function($attr) {
-    $attr['loading'] = 'lazy';
-    return $attr;
-});
-
-// WebP support check
-add_action('admin_notices', function() {
-    if (!function_exists('imagewebp')) {
-        echo '<div class="notice notice-warning"><p>' . __('WebP image support is not enabled on this server.', 'law-firm-dpattorney') . '</p></div>';
-    }
-});
-
-// Schema.org LegalService JSON-LD
-add_action('wp_head', function() {
-    if (is_singular('case_study')) {
-        $data = [
-            '@context' => 'https://schema.org',
-            '@type' => 'LegalService',
-            'name' => get_bloginfo('name'),
-            'url' => get_permalink(),
-            'areaServed' => 'Indonesia',
-        ];
-        echo '<script type="application/ld+json">' . wp_json_encode($data) . '</script>';
-    }
-});
-
-// Breadcrumb navigation
-function dpattorney_breadcrumb() {
-    echo '<nav class="breadcrumb">';
-    echo '<a href="' . esc_url(home_url('/')) . '">' . __('Home', 'law-firm-dpattorney') . '</a> / ';
-    if (is_singular('case_study')) {
-        echo '<a href="' . get_post_type_archive_link('case_study') . '">' . __('Kasus', 'law-firm-dpattorney') . '</a> / ';
-        the_title();
-    } elseif (is_singular('attorney')) {
-        echo '<a href="' . get_post_type_archive_link('attorney') . '">' . __('Attorney', 'law-firm-dpattorney') . '</a> / ';
-        the_title();
-    } else {
-        the_title();
-    }
-    echo '</nav>';
-}
-
-// Open Graph meta tags for case studies
-add_action('wp_head', function() {
-    if (is_singular('case_study')) {
-        global $post;
-        echo '<meta property="og:title" content="' . esc_attr(get_the_title()) . '" />';
-        echo '<meta property="og:type" content="article" />';
-        echo '<meta property="og:url" content="' . esc_url(get_permalink()) . '" />';
-        if (has_post_thumbnail($post->ID)) {
-            $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
-            echo '<meta property="og:image" content="' . esc_url($img[0]) . '" />';
-        }
-        echo '<meta property="og:description" content="' . esc_attr(get_the_excerpt()) . '" />';
-    }
-});
-
-// Canonical URLs
-add_action('wp_head', function() {
-    if (is_singular()) {
-        echo '<link rel="canonical" href="' . esc_url(get_permalink()) . '" />';
-    }
-});
-// Register custom Gutenberg blocks
-add_action('init', function() {
-    $blocks = [
-        'case-study/card',
-        'case-study/grid',
-        'stats/counter',
-        'attorney/card',
-        'practice-area/card',
-    ];
-    foreach ($blocks as $block) {
-        register_block_type(get_template_directory() . '/blocks/' . $block);
-    }
-});
 <?php
-// Theme setup and support
+
+// === Theme Setup ===
 function law_firm_dpattorney_setup() {
     add_theme_support('title-tag');
     add_theme_support('custom-logo');
@@ -93,18 +16,99 @@ function law_firm_dpattorney_setup() {
 }
 add_action('after_setup_theme', 'law_firm_dpattorney_setup');
 
-// Enqueue styles and scripts
+// === Enqueue Scripts & Styles ===
 function law_firm_dpattorney_enqueue_scripts() {
     wp_enqueue_style('law-firm-dpattorney-style', get_stylesheet_uri());
-    // Add additional CSS/JS here
+    wp_enqueue_script('law-firm-dpattorney-main', get_template_directory_uri() . '/assets/js/main.js', array(), '1.0.0', true);
 }
 add_action('wp_enqueue_scripts', 'law_firm_dpattorney_enqueue_scripts');
 
-// Enqueue vanilla JS (no jQuery)
-function law_firm_dpattorney_enqueue_scripts_vanilla() {
-    wp_enqueue_script('law-firm-dpattorney-main', get_template_directory_uri() . '/js/main.js', array(), '1.0.0', true);
+// === Customizer Settings ===
+// ...existing customizer code...
+
+// === Custom Post Types & Taxonomies ===
+// ...existing CPT and taxonomy code...
+
+// === Meta Boxes ===
+// ...existing meta box code...
+
+// === Helper Functions ===
+function dpattorney_breadcrumb() {
+    echo '<nav class="breadcrumb">';
+    echo '<a href="' . esc_url(home_url('/')) . '">' . __('Home', 'law-firm-dpattorney') . '</a> / ';
+    if (is_singular('case_study')) {
+        echo '<a href="' . get_post_type_archive_link('case_study') . '">' . __('Kasus', 'law-firm-dpattorney') . '</a> / ';
+        the_title();
+    } elseif (is_singular('attorney')) {
+        echo '<a href="' . get_post_type_archive_link('attorney') . '">' . __('Attorney', 'law-firm-dpattorney') . '</a> / ';
+        the_title();
+    } else {
+        the_title();
+    }
+    echo '</nav>';
 }
-add_action('wp_enqueue_scripts', 'law_firm_dpattorney_enqueue_scripts_vanilla');
+
+// === Performance & SEO Enhancements ===
+add_filter('wp_get_attachment_image_attributes', function($attr) {
+    $attr['loading'] = 'lazy';
+    return $attr;
+});
+
+add_action('admin_notices', function() {
+    if (!function_exists('imagewebp')) {
+        echo '<div class="notice notice-warning"><p>' . __('WebP image support is not enabled on this server.', 'law-firm-dpattorney') . '</p></div>';
+    }
+});
+
+add_action('wp_head', function() {
+    if (is_singular('case_study')) {
+        $data = array(
+            '@context' => 'https://schema.org',
+            '@type' => 'LegalService',
+            'name' => get_bloginfo('name'),
+            'url' => get_permalink(),
+            'areaServed' => 'Indonesia',
+        );
+        echo '<script type="application/ld+json">' . wp_json_encode($data) . '</script>';
+    }
+});
+
+add_action('wp_head', function() {
+    if (is_singular('case_study')) {
+        global $post;
+        echo '<meta property="og:title" content="' . esc_attr(get_the_title()) . '" />';
+        echo '<meta property="og:type" content="article" />';
+        echo '<meta property="og:url" content="' . esc_url(get_permalink()) . '" />';
+        if (has_post_thumbnail($post->ID)) {
+            $img = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'large');
+            echo '<meta property="og:image" content="' . esc_url($img[0]) . '" />';
+        }
+        echo '<meta property="og:description" content="' . esc_attr(get_the_excerpt()) . '" />';
+    }
+});
+
+add_action('wp_head', function() {
+    if (is_singular()) {
+        echo '<link rel="canonical" href="' . esc_url(get_permalink()) . '" />';
+    }
+});
+
+// === Gutenberg Block Registration ===
+add_action('init', function() {
+    $blocks = array(
+        'case-study/card',
+        'case-study/grid',
+        'stats/counter',
+        'attorney/card',
+        'practice-area/card',
+    );
+    foreach ($blocks as $block) {
+        register_block_type(get_template_directory() . '/blocks/' . $block);
+    }
+});
+// ...existing code...
+
+// ...existing code...
 
 // Lazy loading for images
 add_filter('wp_get_attachment_image_attributes', function($attr) {
