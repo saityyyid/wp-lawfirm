@@ -1,5 +1,25 @@
-/* CSS Reset */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* CSS Reset & Base */
+*, *::before, *::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-behavior: smooth;
+	font-size: 16px;
+}
+
+body {
+	background-color: #0F1419;
+	color: #F5F5F0;
+	font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 1.125rem; /* 18px */
+	line-height: 1.7;
+	overflow-x: hidden;
+	padding-top: 80px; /* For fixed header */
+}
 
 body {
 	font-family: var(--font-body);
@@ -82,6 +102,21 @@ h3 { font-size: var(--h3-size); }
 	.hero-section { padding: 2rem 1rem; }
 	.site-nav { flex-direction: column; gap: 0.5rem; }
 }
+}
+
+::selection {
+	background: rgba(197, 165, 114, 0.3);
+	color: #F5F5F0;
+}
+
+/* Focus States for Accessibility */
+a:focus, button:focus, .btn:focus, input:focus, textarea:focus, select:focus {
+	outline: 2px solid #C5A572;
+	outline-offset: 2px;
+	box-shadow: 0 0 0 2px rgba(197, 165, 114, 0.2);
+	z-index: 2;
+}
+}
 @media (max-width: 480px) {
 	.container { padding: 0.5rem; }
 	.case-card, .attorney-card { padding: 1rem; }
@@ -94,29 +129,99 @@ h3 { font-size: var(--h3-size); }
 	.container { box-shadow: none; }
 }
 /*
-/* CSS Reset & Base */
-*, *::before, *::after {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+Theme Name: law-firm-dpattorney
+Theme URI: https://umbra.law
+Author: dpattorney
+Author URI: https://ahp.id
+Description: Fully customizable, professional WordPress theme for law firms. Inspired by umbra.law and ahp.id.
+Version: 1.0.0
+License: GPL-2.0+
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: law-firm-dpattorney
+Theme Name: DPATTORNEY - Litigation Powerhouse
+Theme URI: https://umbra.law
+Author: DPATTORNEY Legal Team
+Author URI: https://ahp.id
+Description: Premium litigation theme for high-stakes criminal defense and corporate fraud cases. Built for Dion Pongkor & Partners with case-centric design.
+Version: 1.0.0
+License: GPL-2.0+
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: law-firm-dpattorney
+Tags: litigation, criminal-defense, law-firm, attorney, customizable, case-studies, bilingual, indonesia
+	--font-heading: 'Inter', 'Playfair Display', serif;
+	--font-body: 'Inter', 'Source Sans Pro', sans-serif;
+	--base-font-size: 18px;
+	--h1-size: 3.5rem;
+	--h2-size: 2.5rem;
+	--h3-size: 1.75rem;
+	--primary-dark: #0F1419;
+	--secondary-dark: #1A1F2E;
+	--accent-gold: #C5A572;
+	--accent-red: #8B2635;
+	--text-light: #0F1419;
+	--text-muted: #8B92A8;
+	--status-won: #2D5A3D;
+	--font-heading: 'Playfair Display', Georgia, serif;
+	--font-body: 'Inter', 'Source Sans Pro', sans-serif;
+	--line-height: 1.6;
+	--letter-spacing: 0.01em;
+	--font-weight-heading: 700;
+	--font-weight-body: 400;
+	--container-max-width: 1200px;
+	--content-padding: 2rem;
+	--grid-gap: 2rem;
 }
 
-html {
-	scroll-behavior: smooth;
-	font-size: 16px;
-}
 
 body {
-	background-color: #0F1419;
-	color: #F5F5F0;
-	font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-	font-size: 1.125rem; /* 18px */
-	line-height: 1.7;
-	overflow-x: hidden;
-	padding-top: 80px; /* For fixed header */
+	font-family: var(--font-body);
+	font-size: var(--base-font-size);
+	color: var(--text-light);
+	background: var(--primary-dark);
+	line-height: var(--line-height);
+	letter-spacing: var(--letter-spacing);
 }
 
-/* Container System */
+a, a:visited {
+	color: var(--accent-gold);
+	text-decoration: none;
+}
+a:hover, a:active {
+	color: var(--accent-red);
+	text-decoration: underline;
+}
+
+h1 {
+	font-family: var(--font-heading);
+	font-size: var(--h1-size);
+	font-weight: var(--font-weight-heading);
+	color: var(--primary-dark);
+	margin-bottom: 1rem;
+}
+h2 {
+	font-family: var(--font-heading);
+	font-size: var(--h2-size);
+	font-weight: var(--font-weight-heading);
+	color: var(--primary-dark);
+	margin-bottom: 1rem;
+}
+h3 {
+	font-family: var(--font-heading);
+	font-size: var(--h3-size);
+	font-weight: var(--font-weight-heading);
+	color: var(--primary-dark);
+	margin-bottom: 1rem;
+}
+
+.text-muted {
+	color: var(--text-muted);
+}
+
+.accent {
+	color: var(--accent-gold);
+}
+
+
 .container {
 	width: 100%;
 	max-width: 1200px;
@@ -131,8 +236,9 @@ body {
 .container-wide {
 	max-width: 1400px;
 }
+.grid { display: grid; gap: var(--grid-gap); }
+.flex { display: flex; gap: 1rem; }
 
-/* Section Spacing */
 section {
 	padding: 6rem 0; /* 96px top/bottom */
 	position: relative;
@@ -159,7 +265,6 @@ section {
 	margin: 0 auto;
 }
 
-/* Hero Section */
 .hero-section {
 	min-height: 90vh;
 	display: flex;
@@ -316,7 +421,6 @@ section {
 	border-color: #a62d3f;
 }
 
-/* Header Glassmorphism */
 .site-header {
 	position: fixed;
 	top: 0;
@@ -405,7 +509,6 @@ section {
 	background: #a62d3f;
 }
 
-/* Case Cards Section */
 .featured-cases-section {
 	background: #0F1419;
 }
@@ -515,7 +618,6 @@ section {
 	margin-top: 2rem;
 }
 
-/* Stats Section */
 .stats-section {
 	background: #1A1F2E;
 	padding: 5rem 0;
@@ -568,7 +670,6 @@ section {
 	letter-spacing: 0.1em;
 }
 
-/* Footer Section */
 .site-footer {
 	background: #0A0D12;
 	border-top: 1px solid rgba(197, 165, 114, 0.1);
@@ -651,172 +752,92 @@ section {
 	color: #C5A572;
 }
 
-/* Responsive Styles */
+/* Tablet */
 @media (max-width: 1024px) {
 	.hero-headline {
 		font-size: 2.5rem;
 	}
+    
 	.footer-top {
 		grid-template-columns: 1fr 1fr;
 	}
+    
 	.stat-item:not(:last-child)::after {
 		display: none;
 	}
 }
 
+/* Mobile */
 @media (max-width: 768px) {
 	html {
 		font-size: 14px;
 	}
+    
 	section {
 		padding: 4rem 0;
 	}
+    
 	.hero-section {
 		min-height: auto;
 		padding: 6rem 0;
 	}
+    
 	.hero-headline {
 		font-size: 2rem;
 	}
+    
 	.hero-meta {
 		flex-direction: column;
 		gap: 0.5rem;
 	}
+    
 	.meta-separator {
 		display: none;
 	}
+    
 	.hero-cta-group {
 		flex-direction: column;
 		width: 100%;
 	}
+    
 	.btn {
 		width: 100%;
 	}
+    
 	.cases-grid {
 		grid-template-columns: 1fr;
 	}
+    
 	.stats-grid {
 		grid-template-columns: 1fr 1fr;
 		gap: 2rem;
 	}
+    
 	.stat-number {
 		font-size: 2.5rem;
 	}
+    
 	.footer-top {
 		grid-template-columns: 1fr;
 		gap: 3rem;
 	}
+    
 	.footer-bottom {
 		flex-direction: column;
 		gap: 1rem;
 		text-align: center;
 	}
+    
 	.main-navigation {
 		display: none; /* Mobile menu to be implemented later */
 	}
 }
-
-/* Selection Color */
-::selection {
-	background: rgba(197, 165, 114, 0.3);
-	color: #F5F5F0;
 }
-Theme Name: law-firm-dpattorney
-Theme URI: https://umbra.law
-Author: dpattorney
-Author URI: https://ahp.id
-Description: Fully customizable, professional WordPress theme for law firms. Inspired by umbra.law and ahp.id.
-Version: 1.0.0
-License: GPL-2.0+
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: law-firm-dpattorney
-Theme Name: DPATTORNEY - Litigation Powerhouse
-Theme URI: https://umbra.law
-Author: DPATTORNEY Legal Team
-Author URI: https://ahp.id
-Description: Premium litigation theme for high-stakes criminal defense and corporate fraud cases. Built for Dion Pongkor & Partners with case-centric design.
-Version: 1.0.0
-License: GPL-2.0+
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: law-firm-dpattorney
-Tags: litigation, criminal-defense, law-firm, attorney, customizable, case-studies, bilingual, indonesia
-	--font-heading: 'Inter', 'Playfair Display', serif;
-	--font-body: 'Inter', 'Source Sans Pro', sans-serif;
-	--base-font-size: 18px;
-	--h1-size: 3.5rem;
-	--h2-size: 2.5rem;
-	--h3-size: 1.75rem;
-	--primary-dark: #0F1419;
-	--secondary-dark: #1A1F2E;
-	--accent-gold: #C5A572;
-	--accent-red: #8B2635;
-	--text-light: #0F1419;
-	--text-muted: #8B92A8;
-	--status-won: #2D5A3D;
-	--font-heading: 'Playfair Display', Georgia, serif;
-	--font-body: 'Inter', 'Source Sans Pro', sans-serif;
-	--line-height: 1.6;
-	--letter-spacing: 0.01em;
-	--font-weight-heading: 700;
-	--font-weight-body: 400;
-	--container-max-width: 1200px;
-	--content-padding: 2rem;
-	--grid-gap: 2rem;
 }
-
-
-body {
-	font-family: var(--font-body);
-	font-size: var(--base-font-size);
-	color: var(--text-light);
-	background: var(--primary-dark);
-	line-height: var(--line-height);
-	letter-spacing: var(--letter-spacing);
 }
-
-a, a:visited {
-	color: var(--accent-gold);
-	text-decoration: none;
 }
-a:hover, a:active {
-	color: var(--accent-red);
-	text-decoration: underline;
 }
-
-h1 {
-	font-family: var(--font-heading);
-	font-size: var(--h1-size);
-	font-weight: var(--font-weight-heading);
-	color: var(--primary-dark);
-	margin-bottom: 1rem;
 }
-h2 {
-	font-family: var(--font-heading);
-	font-size: var(--h2-size);
-	font-weight: var(--font-weight-heading);
-	color: var(--primary-dark);
-	margin-bottom: 1rem;
-}
-h3 {
-	font-family: var(--font-heading);
-	font-size: var(--h3-size);
-	font-weight: var(--font-weight-heading);
-	color: var(--primary-dark);
-	margin-bottom: 1rem;
-}
-
-.text-muted {
-	color: var(--text-muted);
-}
-
-.accent {
-	color: var(--accent-gold);
-}
-
-.container {
-	max-width: var(--container-max-width);
-	margin: 0 auto;
-	padding: var(--content-padding);
 }
 
 .grid {

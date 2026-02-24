@@ -34,10 +34,7 @@
     }
 
     ?>
-        <!-- About Section removed for premium UI overhaul -->
-            <div class="about-stats">Stats: years, cases, attorneys, etc.</div>
-            <div class="about-mission">Mission/vision statement placeholder</div>
-        </section>
+
 
         <?php
         // Testimonials Preview

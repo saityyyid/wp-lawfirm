@@ -27,16 +27,3 @@
         </div>
     </div>
 </header>
-<div class="hero-section hero-case-victory">
-    <div class="hero-bg-texture"></div>
-    <div class="hero-content">
-        <span class="hero-preheading">Kemenangan Terbaru</span>
-        <h1 class="hero-headline">Bebas dari Tuduhan Korupsi BTS 4G</h1>
-        <div class="hero-subheadline">Representasi strategis untuk Johnny G. Plate di Pengadilan Tipikor</div>
-        <div class="hero-meta">2023 | Pengadilan Tipikor Jakarta | Status: Bebas</div>
-        <div class="hero-ctas">
-            <a href="#case-detail" class="cta-btn cta-primary">Lihat Detail Kasus</a>
-            <a href="#consult" class="cta-btn cta-secondary">Konsultasi Sekarang</a>
-        </div>
-    </div>
-</div>
